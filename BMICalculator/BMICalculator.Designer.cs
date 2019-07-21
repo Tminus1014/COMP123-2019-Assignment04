@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.SetUnitsTableLayout_sub = new System.Windows.Forms.TableLayoutPanel();
+            this.SetUnitsTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ImperialRadioBtn = new System.Windows.Forms.RadioButton();
             this.MetricRadioBtn = new System.Windows.Forms.RadioButton();
             this.UserInputLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -41,26 +41,26 @@
             this.BMIResultMultLineTextBox = new System.Windows.Forms.TextBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.SetUnitsGroupBox = new System.Windows.Forms.GroupBox();
-            this.SetUnitsTableLayout_sub.SuspendLayout();
+            this.SetUnitsTableLayout.SuspendLayout();
             this.UserInputLayoutPanel.SuspendLayout();
             this.ResultsLayoutPanel.SuspendLayout();
             this.ResultsLayoutPanel_sub.SuspendLayout();
             this.SetUnitsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SetUnitsTableLayout_sub
+            // SetUnitsTableLayout
             // 
-            this.SetUnitsTableLayout_sub.ColumnCount = 2;
-            this.SetUnitsTableLayout_sub.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.SetUnitsTableLayout_sub.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.SetUnitsTableLayout_sub.Controls.Add(this.ImperialRadioBtn, 0, 0);
-            this.SetUnitsTableLayout_sub.Controls.Add(this.MetricRadioBtn, 1, 0);
-            this.SetUnitsTableLayout_sub.Location = new System.Drawing.Point(0, 35);
-            this.SetUnitsTableLayout_sub.Name = "SetUnitsTableLayout_sub";
-            this.SetUnitsTableLayout_sub.RowCount = 1;
-            this.SetUnitsTableLayout_sub.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.SetUnitsTableLayout_sub.Size = new System.Drawing.Size(282, 33);
-            this.SetUnitsTableLayout_sub.TabIndex = 0;
+            this.SetUnitsTableLayout.ColumnCount = 2;
+            this.SetUnitsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.SetUnitsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.SetUnitsTableLayout.Controls.Add(this.ImperialRadioBtn, 0, 0);
+            this.SetUnitsTableLayout.Controls.Add(this.MetricRadioBtn, 1, 0);
+            this.SetUnitsTableLayout.Location = new System.Drawing.Point(0, 29);
+            this.SetUnitsTableLayout.Name = "SetUnitsTableLayout";
+            this.SetUnitsTableLayout.RowCount = 1;
+            this.SetUnitsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SetUnitsTableLayout.Size = new System.Drawing.Size(282, 33);
+            this.SetUnitsTableLayout.TabIndex = 0;
             // 
             // ImperialRadioBtn
             // 
@@ -94,7 +94,7 @@
             this.UserInputLayoutPanel.ColumnCount = 3;
             this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.98655F));
             this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.01345F));
-            this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.UserInputLayoutPanel.Controls.Add(this.MyWeightLabel, 0, 1);
             this.UserInputLayoutPanel.Controls.Add(this.HeightTextBox, 1, 0);
             this.UserInputLayoutPanel.Controls.Add(this.WeightTextBox, 1, 1);
@@ -126,25 +126,29 @@
             this.HeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeightTextBox.Location = new System.Drawing.Point(140, 3);
+            this.HeightTextBox.MaxLength = 3;
             this.HeightTextBox.Name = "HeightTextBox";
-            this.HeightTextBox.Size = new System.Drawing.Size(82, 30);
+            this.HeightTextBox.Size = new System.Drawing.Size(81, 30);
             this.HeightTextBox.TabIndex = 1;
+            this.HeightTextBox.TextChanged += new System.EventHandler(this.HeightTextBox_TextChanged);
             // 
             // WeightTextBox
             // 
             this.WeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeightTextBox.Location = new System.Drawing.Point(140, 38);
+            this.WeightTextBox.MaxLength = 3;
             this.WeightTextBox.Name = "WeightTextBox";
-            this.WeightTextBox.Size = new System.Drawing.Size(82, 30);
-            this.WeightTextBox.TabIndex = 1;
+            this.WeightTextBox.Size = new System.Drawing.Size(81, 30);
+            this.WeightTextBox.TabIndex = 2;
+            this.WeightTextBox.TextChanged += new System.EventHandler(this.WeightTextBox_TextChanged);
             // 
             // WeightUnitLabel
             // 
             this.WeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WeightUnitLabel.AutoSize = true;
             this.WeightUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeightUnitLabel.Location = new System.Drawing.Point(228, 40);
+            this.WeightUnitLabel.Location = new System.Drawing.Point(227, 40);
             this.WeightUnitLabel.Name = "WeightUnitLabel";
             this.WeightUnitLabel.Size = new System.Drawing.Size(33, 25);
             this.WeightUnitLabel.TabIndex = 0;
@@ -167,7 +171,7 @@
             this.HeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HeightUnitLabel.AutoSize = true;
             this.HeightUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightUnitLabel.Location = new System.Drawing.Point(228, 5);
+            this.HeightUnitLabel.Location = new System.Drawing.Point(227, 5);
             this.HeightUnitLabel.Name = "HeightUnitLabel";
             this.HeightUnitLabel.Size = new System.Drawing.Size(28, 25);
             this.HeightUnitLabel.TabIndex = 0;
@@ -175,31 +179,34 @@
             // 
             // CalculateBMIButton
             // 
-            this.CalculateBMIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculateBMIButton.Enabled = false;
+            this.CalculateBMIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculateBMIButton.Location = new System.Drawing.Point(12, 169);
             this.CalculateBMIButton.Name = "CalculateBMIButton";
-            this.CalculateBMIButton.Size = new System.Drawing.Size(281, 38);
-            this.CalculateBMIButton.TabIndex = 3;
+            this.CalculateBMIButton.Size = new System.Drawing.Size(281, 59);
+            this.CalculateBMIButton.TabIndex = 5;
             this.CalculateBMIButton.Text = "Calculate BMI";
             this.CalculateBMIButton.UseVisualStyleBackColor = true;
+            this.CalculateBMIButton.Click += new System.EventHandler(this.CalculateBMIButton_Click);
             // 
             // ResultsLayoutPanel
             // 
             this.ResultsLayoutPanel.ColumnCount = 1;
             this.ResultsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ResultsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ResultsLayoutPanel.Controls.Add(this.ResultsLayoutPanel_sub, 0, 0);
             this.ResultsLayoutPanel.Controls.Add(this.BMIResultMultLineTextBox, 0, 1);
-            this.ResultsLayoutPanel.Location = new System.Drawing.Point(12, 213);
+            this.ResultsLayoutPanel.Controls.Add(this.ResultsLayoutPanel_sub, 0, 0);
+            this.ResultsLayoutPanel.Location = new System.Drawing.Point(12, 234);
             this.ResultsLayoutPanel.Name = "ResultsLayoutPanel";
             this.ResultsLayoutPanel.RowCount = 2;
-            this.ResultsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.36364F));
-            this.ResultsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.63636F));
-            this.ResultsLayoutPanel.Size = new System.Drawing.Size(281, 164);
+            this.ResultsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.65734F));
+            this.ResultsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.34266F));
+            this.ResultsLayoutPanel.Size = new System.Drawing.Size(281, 143);
             this.ResultsLayoutPanel.TabIndex = 4;
             // 
             // ResultsLayoutPanel_sub
             // 
+            this.ResultsLayoutPanel_sub.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ResultsLayoutPanel_sub.ColumnCount = 2;
             this.ResultsLayoutPanel_sub.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.02974F));
             this.ResultsLayoutPanel_sub.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.97026F));
@@ -231,17 +238,19 @@
             this.BMIResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BMIResultTextBox.Location = new System.Drawing.Point(190, 11);
             this.BMIResultTextBox.Name = "BMIResultTextBox";
+            this.BMIResultTextBox.ReadOnly = true;
             this.BMIResultTextBox.Size = new System.Drawing.Size(81, 30);
             this.BMIResultTextBox.TabIndex = 1;
             // 
             // BMIResultMultLineTextBox
             // 
-            this.BMIResultMultLineTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BMIResultMultLineTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.BMIResultMultLineTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMIResultMultLineTextBox.Location = new System.Drawing.Point(3, 62);
+            this.BMIResultMultLineTextBox.Location = new System.Drawing.Point(3, 63);
             this.BMIResultMultLineTextBox.Multiline = true;
             this.BMIResultMultLineTextBox.Name = "BMIResultMultLineTextBox";
-            this.BMIResultMultLineTextBox.Size = new System.Drawing.Size(275, 99);
+            this.BMIResultMultLineTextBox.ReadOnly = true;
+            this.BMIResultMultLineTextBox.Size = new System.Drawing.Size(275, 77);
             this.BMIResultMultLineTextBox.TabIndex = 1;
             // 
             // ResetButton
@@ -253,11 +262,12 @@
             this.ResetButton.TabIndex = 3;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // SetUnitsGroupBox
             // 
-            this.SetUnitsGroupBox.Controls.Add(this.SetUnitsTableLayout_sub);
-            this.SetUnitsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetUnitsGroupBox.Controls.Add(this.SetUnitsTableLayout);
+            this.SetUnitsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetUnitsGroupBox.Location = new System.Drawing.Point(12, 12);
             this.SetUnitsGroupBox.Name = "SetUnitsGroupBox";
             this.SetUnitsGroupBox.Size = new System.Drawing.Size(282, 74);
@@ -282,8 +292,8 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
-            this.SetUnitsTableLayout_sub.ResumeLayout(false);
-            this.SetUnitsTableLayout_sub.PerformLayout();
+            this.SetUnitsTableLayout.ResumeLayout(false);
+            this.SetUnitsTableLayout.PerformLayout();
             this.UserInputLayoutPanel.ResumeLayout(false);
             this.UserInputLayoutPanel.PerformLayout();
             this.ResultsLayoutPanel.ResumeLayout(false);
@@ -296,7 +306,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel SetUnitsTableLayout_sub;
+        private System.Windows.Forms.TableLayoutPanel SetUnitsTableLayout;
         private System.Windows.Forms.RadioButton ImperialRadioBtn;
         private System.Windows.Forms.RadioButton MetricRadioBtn;
         private System.Windows.Forms.TableLayoutPanel UserInputLayoutPanel;
