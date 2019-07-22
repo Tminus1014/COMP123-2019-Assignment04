@@ -35,10 +35,10 @@
             this.HeightUnitLabel = new System.Windows.Forms.Label();
             this.CalculateBMIButton = new System.Windows.Forms.Button();
             this.ResultsLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BMIResultMultiLineTextBox = new System.Windows.Forms.TextBox();
             this.ResultsLayoutPanel_sub = new System.Windows.Forms.TableLayoutPanel();
             this.BMIResultLabel = new System.Windows.Forms.Label();
             this.BMIResultTextBox = new System.Windows.Forms.TextBox();
-            this.BMIResultMultLineTextBox = new System.Windows.Forms.TextBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.SetUnitsGroupBox = new System.Windows.Forms.GroupBox();
             this.SetUnitsTableLayout.SuspendLayout();
@@ -74,6 +74,7 @@
             this.ImperialRadioBtn.TabStop = true;
             this.ImperialRadioBtn.Text = "Imperial";
             this.ImperialRadioBtn.UseVisualStyleBackColor = true;
+            this.ImperialRadioBtn.CheckedChanged += new System.EventHandler(this.ImperialRadioBtn_CheckedChanged);
             // 
             // MetricRadioBtn
             // 
@@ -88,13 +89,14 @@
             this.MetricRadioBtn.TabStop = true;
             this.MetricRadioBtn.Text = "Metric";
             this.MetricRadioBtn.UseVisualStyleBackColor = true;
+            this.MetricRadioBtn.CheckedChanged += new System.EventHandler(this.MetricRadioBtn_CheckedChanged);
             // 
             // UserInputLayoutPanel
             // 
             this.UserInputLayoutPanel.ColumnCount = 3;
             this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.98655F));
             this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.01345F));
-            this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.UserInputLayoutPanel.Controls.Add(this.MyWeightLabel, 0, 1);
             this.UserInputLayoutPanel.Controls.Add(this.HeightTextBox, 1, 0);
             this.UserInputLayoutPanel.Controls.Add(this.WeightTextBox, 1, 1);
@@ -114,7 +116,7 @@
             this.MyWeightLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MyWeightLabel.AutoSize = true;
             this.MyWeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyWeightLabel.Location = new System.Drawing.Point(22, 40);
+            this.MyWeightLabel.Location = new System.Drawing.Point(20, 40);
             this.MyWeightLabel.Name = "MyWeightLabel";
             this.MyWeightLabel.Size = new System.Drawing.Size(112, 25);
             this.MyWeightLabel.TabIndex = 0;
@@ -125,10 +127,10 @@
             // 
             this.HeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightTextBox.Location = new System.Drawing.Point(140, 3);
-            this.HeightTextBox.MaxLength = 3;
+            this.HeightTextBox.Location = new System.Drawing.Point(138, 3);
+            this.HeightTextBox.MaxLength = 5;
             this.HeightTextBox.Name = "HeightTextBox";
-            this.HeightTextBox.Size = new System.Drawing.Size(81, 30);
+            this.HeightTextBox.Size = new System.Drawing.Size(80, 30);
             this.HeightTextBox.TabIndex = 1;
             this.HeightTextBox.TextChanged += new System.EventHandler(this.HeightTextBox_TextChanged);
             // 
@@ -136,10 +138,10 @@
             // 
             this.WeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeightTextBox.Location = new System.Drawing.Point(140, 38);
-            this.WeightTextBox.MaxLength = 3;
+            this.WeightTextBox.Location = new System.Drawing.Point(138, 38);
+            this.WeightTextBox.MaxLength = 5;
             this.WeightTextBox.Name = "WeightTextBox";
-            this.WeightTextBox.Size = new System.Drawing.Size(81, 30);
+            this.WeightTextBox.Size = new System.Drawing.Size(80, 30);
             this.WeightTextBox.TabIndex = 2;
             this.WeightTextBox.TextChanged += new System.EventHandler(this.WeightTextBox_TextChanged);
             // 
@@ -148,7 +150,7 @@
             this.WeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WeightUnitLabel.AutoSize = true;
             this.WeightUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeightUnitLabel.Location = new System.Drawing.Point(227, 40);
+            this.WeightUnitLabel.Location = new System.Drawing.Point(224, 40);
             this.WeightUnitLabel.Name = "WeightUnitLabel";
             this.WeightUnitLabel.Size = new System.Drawing.Size(33, 25);
             this.WeightUnitLabel.TabIndex = 0;
@@ -159,7 +161,7 @@
             this.MyHeightLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MyHeightLabel.AutoSize = true;
             this.MyHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyHeightLabel.Location = new System.Drawing.Point(28, 5);
+            this.MyHeightLabel.Location = new System.Drawing.Point(26, 5);
             this.MyHeightLabel.Name = "MyHeightLabel";
             this.MyHeightLabel.Size = new System.Drawing.Size(106, 25);
             this.MyHeightLabel.TabIndex = 0;
@@ -171,7 +173,7 @@
             this.HeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HeightUnitLabel.AutoSize = true;
             this.HeightUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightUnitLabel.Location = new System.Drawing.Point(227, 5);
+            this.HeightUnitLabel.Location = new System.Drawing.Point(224, 5);
             this.HeightUnitLabel.Name = "HeightUnitLabel";
             this.HeightUnitLabel.Size = new System.Drawing.Size(28, 25);
             this.HeightUnitLabel.TabIndex = 0;
@@ -194,7 +196,7 @@
             this.ResultsLayoutPanel.ColumnCount = 1;
             this.ResultsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ResultsLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ResultsLayoutPanel.Controls.Add(this.BMIResultMultLineTextBox, 0, 1);
+            this.ResultsLayoutPanel.Controls.Add(this.BMIResultMultiLineTextBox, 0, 1);
             this.ResultsLayoutPanel.Controls.Add(this.ResultsLayoutPanel_sub, 0, 0);
             this.ResultsLayoutPanel.Location = new System.Drawing.Point(12, 234);
             this.ResultsLayoutPanel.Name = "ResultsLayoutPanel";
@@ -203,6 +205,17 @@
             this.ResultsLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.34266F));
             this.ResultsLayoutPanel.Size = new System.Drawing.Size(281, 143);
             this.ResultsLayoutPanel.TabIndex = 4;
+            // 
+            // BMIResultMultiLineTextBox
+            // 
+            this.BMIResultMultiLineTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BMIResultMultiLineTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BMIResultMultiLineTextBox.Location = new System.Drawing.Point(3, 63);
+            this.BMIResultMultiLineTextBox.Multiline = true;
+            this.BMIResultMultiLineTextBox.Name = "BMIResultMultiLineTextBox";
+            this.BMIResultMultiLineTextBox.ReadOnly = true;
+            this.BMIResultMultiLineTextBox.Size = new System.Drawing.Size(275, 77);
+            this.BMIResultMultiLineTextBox.TabIndex = 1;
             // 
             // ResultsLayoutPanel_sub
             // 
@@ -241,17 +254,6 @@
             this.BMIResultTextBox.ReadOnly = true;
             this.BMIResultTextBox.Size = new System.Drawing.Size(81, 30);
             this.BMIResultTextBox.TabIndex = 1;
-            // 
-            // BMIResultMultLineTextBox
-            // 
-            this.BMIResultMultLineTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BMIResultMultLineTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMIResultMultLineTextBox.Location = new System.Drawing.Point(3, 63);
-            this.BMIResultMultLineTextBox.Multiline = true;
-            this.BMIResultMultLineTextBox.Name = "BMIResultMultLineTextBox";
-            this.BMIResultMultLineTextBox.ReadOnly = true;
-            this.BMIResultMultLineTextBox.Size = new System.Drawing.Size(275, 77);
-            this.BMIResultMultLineTextBox.TabIndex = 1;
             // 
             // ResetButton
             // 
@@ -292,6 +294,7 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.Load += new System.EventHandler(this.BMICalculator_Load);
             this.SetUnitsTableLayout.ResumeLayout(false);
             this.SetUnitsTableLayout.PerformLayout();
             this.UserInputLayoutPanel.ResumeLayout(false);
@@ -322,7 +325,7 @@
         private System.Windows.Forms.TableLayoutPanel ResultsLayoutPanel_sub;
         private System.Windows.Forms.Label BMIResultLabel;
         private System.Windows.Forms.TextBox BMIResultTextBox;
-        private System.Windows.Forms.TextBox BMIResultMultLineTextBox;
+        private System.Windows.Forms.TextBox BMIResultMultiLineTextBox;
         private System.Windows.Forms.GroupBox SetUnitsGroupBox;
     }
 }

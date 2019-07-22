@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace BMICalculator {
     public partial class BMICalculator : Form {
-        private int heightInput;
-        private int weightInput;
-        private int bmiResult;
+        private static double heightInput;
+        private static double weightInput;
+        private static double bmiResult;
+        private static string unitsMode;
 
         public BMICalculator() {
             InitializeComponent();
+        }
+
+        private void BMICalculator_Load(object sender, EventArgs e) {
+            // Default units to Metric
+            MetricRadioBtn.Checked = true; changeUnitsMode();
+
+            // Reset everything just to make sure the plate is clean :)
+            resetAll();
         }
 
         private void HeightTextBox_TextChanged(object sender, EventArgs e) {
@@ -28,6 +37,7 @@ namespace BMICalculator {
 
         private void CalculateBMIButton_Click(object sender, EventArgs e) {
             calculateBMI();
+            disableCalculateButton();
             displayBMIResult();
             describeBMIResult();
         }
@@ -36,35 +46,59 @@ namespace BMICalculator {
             resetAll();
         }
 
+        private void MetricRadioBtn_CheckedChanged(object sender, EventArgs e) {
+            changeUnitsMode();
+            resetAll();
+        }
+
+        private void ImperialRadioBtn_CheckedChanged(object sender, EventArgs e) {
+            changeUnitsMode();
+            resetAll();
+        }
+
         private void calculateBMI() {
-            bmiResult = heightInput + weightInput;
+            if (unitsMode == "Metric") {
+                bmiResult = weightInput / Math.Pow(heightInput, 2);
+            } else if (unitsMode == "Imperial") {
+                bmiResult = (weightInput * 703) / Math.Pow(heightInput, 2);
+            }
         }
 
         private void displayBMIResult() {
+            bmiResult = Math.Round(bmiResult, 1);
             BMIResultTextBox.Text = bmiResult.ToString();
         }
 
         private void describeBMIResult() {
             string description = "";
 
-            if (bmiResult >= 2) {
-                description = "lul u fat";
-            } else if (bmiResult < 2) {
-                description = "lul u skinny";
+            // < 18.5: Overweight
+            if (bmiResult < 18.5) {
+                description = "be underweight";
+            // >= 18.5 and <= 24.9: Normal
+            } else if (bmiResult >= 18.5 && bmiResult <= 24.9) {
+                description = "have normal weight";
+            // >= 25 and <= 29.9: Overweight
+            } else if (bmiResult >= 25 && bmiResult <= 29.9) {
+                description = "be overweight";
+            // >= 30: Obese
+            } else if (bmiResult >= 30) {
+                description = "be obese";
             }
 
-            BMIResultMultLineTextBox.Text = $"With a measurement of {heightInput}{HeightUnitLabel.Text} and {weightInput}{WeightUnitLabel.Text}, your calculated BMI is {bmiResult}, which means {description}.";
+            BMIResultMultiLineTextBox.Text = $"With a measurement of {heightInput}{HeightUnitLabel.Text} and {weightInput}{WeightUnitLabel.Text}, your calculated BMI is {bmiResult}, which means you are considered to {description}.";
         }
 
         private void verifyValidInput() {
             try {
-                heightInput = Convert.ToInt32(HeightTextBox.Text);
-                weightInput = Convert.ToInt32(WeightTextBox.Text);
+                heightInput = Convert.ToDouble(HeightTextBox.Text);
+                weightInput = Convert.ToDouble(WeightTextBox.Text);
 
                 if (heightInput <= 0 || weightInput <= 0) {
-                    CalculateBMIButton.Enabled = false;
-                } else {
-                    CalculateBMIButton.Enabled = true;
+                    disableCalculateButton();
+                }
+                else {
+                    enableCalculateButton();
                 }
 
             } catch {
@@ -72,12 +106,31 @@ namespace BMICalculator {
             }
         }
 
+        private void enableCalculateButton() {
+            CalculateBMIButton.Enabled = true;
+        }
+
+        private void disableCalculateButton() {
+            CalculateBMIButton.Enabled = false;
+        }
+
+        private void changeUnitsMode() {
+            if (MetricRadioBtn.Checked == true) {
+                HeightUnitLabel.Text = "m";
+                WeightUnitLabel.Text = "kg";
+                unitsMode = "Metric";
+            } else if (ImperialRadioBtn.Checked == true) {
+                HeightUnitLabel.Text = "inch";
+                WeightUnitLabel.Text = "lbs";
+                unitsMode = "Imperial";
+            }
+        }
+
         private void resetAll() {
-            MetricRadioBtn.Checked = true;
             HeightTextBox.Text = "";
             WeightTextBox.Text = "";
             BMIResultTextBox.Text = "";
-            BMIResultMultLineTextBox.Text = "";
+            BMIResultMultiLineTextBox.Text = "";
         }
     }
 }
