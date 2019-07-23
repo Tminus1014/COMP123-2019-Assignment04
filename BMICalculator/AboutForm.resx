@@ -117,7 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="BMICalculatorMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="BMIScaleLabel.Text" xml:space="preserve">
+    <value>The BMI scale is as follows:
+
+Underweight: under 18.5
+Normal: between 18.5 and 24.9
+Overweight: between 25 and 29.9
+Obese: over 30
+
+Always remember that BMI calculation does not take muscle mass into consideration!
+</value>
+  </data>
 </root>
