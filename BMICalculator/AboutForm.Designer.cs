@@ -69,7 +69,7 @@
             // 
             this.BMIScaleGroupBox.Controls.Add(this.BMIScaleLabel);
             this.BMIScaleGroupBox.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMIScaleGroupBox.ForeColor = System.Drawing.Color.White;
+            this.BMIScaleGroupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.BMIScaleGroupBox.Location = new System.Drawing.Point(21, 99);
             this.BMIScaleGroupBox.Name = "BMIScaleGroupBox";
             this.BMIScaleGroupBox.Size = new System.Drawing.Size(261, 241);
@@ -79,6 +79,7 @@
             // 
             // BMIScaleLabel
             // 
+            this.BMIScaleLabel.ForeColor = System.Drawing.Color.White;
             this.BMIScaleLabel.Location = new System.Drawing.Point(7, 25);
             this.BMIScaleLabel.Name = "BMIScaleLabel";
             this.BMIScaleLabel.Size = new System.Drawing.Size(248, 213);
