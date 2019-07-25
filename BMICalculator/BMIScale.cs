@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BMICalculator {
-    public partial class AboutForm : Form {
-        public AboutForm() {
+    public partial class BMIScale : Form {
+        public BMIScale() {
             InitializeComponent();
         }
 
-        private void CloseAboutButton_Click(object sender, EventArgs e) {
-            Program.aboutForm.Hide();
+        private void CloseBMIScaleButton_Click(object sender, EventArgs e) {
+            Program.bmiScaleForm.Hide();
         }
     }
 }

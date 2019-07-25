@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
+    <Compile Include="BMIScale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <Compile Include="BMIScale.Designer.cs">
+      <DependentUpon>BMIScale.cs</DependentUpon>
     </Compile>
     <Compile Include="BMICalculator.cs">
       <SubType>Form</SubType>
@@ -66,8 +66,8 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <EmbeddedResource Include="BMIScale.resx">
+      <DependentUpon>BMIScale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BMICalculator.resx">
       <DependentUpon>BMICalculator.cs</DependentUpon>

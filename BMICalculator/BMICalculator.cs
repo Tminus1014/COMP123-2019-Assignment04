@@ -31,8 +31,8 @@ namespace BMICalculator {
             Application.Exit();
         }
 
-        private void AboutToolStripMenuItem_Click(object sender, EventArgs e) {
-            Program.aboutForm.Show();
+        private void ContentsToolStripMenuItem_Click(object sender, EventArgs e) {
+            Program.bmiScaleForm.Show();
         }
 
         private void HeightTextBox_TextChanged(object sender, EventArgs e) {

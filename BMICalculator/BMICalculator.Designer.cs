@@ -41,28 +41,30 @@
             this.BMIResultTextBox = new System.Windows.Forms.TextBox();
             this.ResetButton = new System.Windows.Forms.Button();
             this.SetUnitsGroupBox = new System.Windows.Forms.GroupBox();
-            this.BMICalculatorMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewBMIScaleMenuStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SetUnitsTableLayout.SuspendLayout();
             this.UserInputLayoutPanel.SuspendLayout();
             this.ResultsLayoutPanel.SuspendLayout();
             this.ResultsLayoutPanel_sub.SuspendLayout();
             this.SetUnitsGroupBox.SuspendLayout();
-            this.BMICalculatorMenuStrip.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // SetUnitsTableLayout
             // 
+            this.SetUnitsTableLayout.BackColor = System.Drawing.Color.Transparent;
             this.SetUnitsTableLayout.ColumnCount = 2;
             this.SetUnitsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.SetUnitsTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.SetUnitsTableLayout.Controls.Add(this.ImperialRadioBtn, 0, 0);
             this.SetUnitsTableLayout.Controls.Add(this.MetricRadioBtn, 1, 0);
-            this.SetUnitsTableLayout.Location = new System.Drawing.Point(0, 29);
+            this.SetUnitsTableLayout.Location = new System.Drawing.Point(6, 29);
             this.SetUnitsTableLayout.Name = "SetUnitsTableLayout";
             this.SetUnitsTableLayout.RowCount = 1;
             this.SetUnitsTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.SetUnitsTableLayout.Size = new System.Drawing.Size(282, 33);
+            this.SetUnitsTableLayout.Size = new System.Drawing.Size(270, 33);
             this.SetUnitsTableLayout.TabIndex = 0;
             // 
             // ImperialRadioBtn
@@ -87,7 +89,7 @@
             this.MetricRadioBtn.Checked = true;
             this.MetricRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetricRadioBtn.ForeColor = System.Drawing.Color.White;
-            this.MetricRadioBtn.Location = new System.Drawing.Point(144, 3);
+            this.MetricRadioBtn.Location = new System.Drawing.Point(138, 3);
             this.MetricRadioBtn.Name = "MetricRadioBtn";
             this.MetricRadioBtn.Size = new System.Drawing.Size(86, 27);
             this.MetricRadioBtn.TabIndex = 0;
@@ -101,7 +103,7 @@
             this.UserInputLayoutPanel.ColumnCount = 3;
             this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.98655F));
             this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.01345F));
-            this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.UserInputLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.UserInputLayoutPanel.Controls.Add(this.MyWeightLabel, 0, 1);
             this.UserInputLayoutPanel.Controls.Add(this.HeightTextBox, 1, 0);
             this.UserInputLayoutPanel.Controls.Add(this.WeightTextBox, 1, 1);
@@ -121,7 +123,7 @@
             this.MyWeightLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MyWeightLabel.AutoSize = true;
             this.MyWeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyWeightLabel.Location = new System.Drawing.Point(13, 40);
+            this.MyWeightLabel.Location = new System.Drawing.Point(12, 40);
             this.MyWeightLabel.Name = "MyWeightLabel";
             this.MyWeightLabel.Size = new System.Drawing.Size(112, 25);
             this.MyWeightLabel.TabIndex = 0;
@@ -134,10 +136,10 @@
             this.HeightTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.HeightTextBox.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeightTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(235)))), ((int)(((byte)(21)))));
-            this.HeightTextBox.Location = new System.Drawing.Point(131, 4);
+            this.HeightTextBox.Location = new System.Drawing.Point(130, 4);
             this.HeightTextBox.MaxLength = 5;
             this.HeightTextBox.Name = "HeightTextBox";
-            this.HeightTextBox.Size = new System.Drawing.Size(76, 27);
+            this.HeightTextBox.Size = new System.Drawing.Size(75, 27);
             this.HeightTextBox.TabIndex = 1;
             this.HeightTextBox.TextChanged += new System.EventHandler(this.HeightTextBox_TextChanged);
             // 
@@ -147,10 +149,10 @@
             this.WeightTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.WeightTextBox.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WeightTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(235)))), ((int)(((byte)(21)))));
-            this.WeightTextBox.Location = new System.Drawing.Point(131, 39);
+            this.WeightTextBox.Location = new System.Drawing.Point(130, 39);
             this.WeightTextBox.MaxLength = 5;
             this.WeightTextBox.Name = "WeightTextBox";
-            this.WeightTextBox.Size = new System.Drawing.Size(76, 27);
+            this.WeightTextBox.Size = new System.Drawing.Size(75, 27);
             this.WeightTextBox.TabIndex = 2;
             this.WeightTextBox.TextChanged += new System.EventHandler(this.WeightTextBox_TextChanged);
             // 
@@ -159,7 +161,7 @@
             this.WeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WeightUnitLabel.AutoSize = true;
             this.WeightUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeightUnitLabel.Location = new System.Drawing.Point(213, 40);
+            this.WeightUnitLabel.Location = new System.Drawing.Point(211, 40);
             this.WeightUnitLabel.Name = "WeightUnitLabel";
             this.WeightUnitLabel.Size = new System.Drawing.Size(33, 25);
             this.WeightUnitLabel.TabIndex = 0;
@@ -170,7 +172,7 @@
             this.MyHeightLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MyHeightLabel.AutoSize = true;
             this.MyHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyHeightLabel.Location = new System.Drawing.Point(19, 5);
+            this.MyHeightLabel.Location = new System.Drawing.Point(18, 5);
             this.MyHeightLabel.Name = "MyHeightLabel";
             this.MyHeightLabel.Size = new System.Drawing.Size(106, 25);
             this.MyHeightLabel.TabIndex = 0;
@@ -182,7 +184,7 @@
             this.HeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HeightUnitLabel.AutoSize = true;
             this.HeightUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightUnitLabel.Location = new System.Drawing.Point(213, 5);
+            this.HeightUnitLabel.Location = new System.Drawing.Point(211, 5);
             this.HeightUnitLabel.Name = "HeightUnitLabel";
             this.HeightUnitLabel.Size = new System.Drawing.Size(28, 25);
             this.HeightUnitLabel.TabIndex = 0;
@@ -193,7 +195,7 @@
             this.CalculateBMIButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.CalculateBMIButton.Enabled = false;
             this.CalculateBMIButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CalculateBMIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculateBMIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculateBMIButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(235)))), ((int)(((byte)(21)))));
             this.CalculateBMIButton.Location = new System.Drawing.Point(12, 187);
             this.CalculateBMIButton.Name = "CalculateBMIButton";
@@ -300,27 +302,36 @@
             this.SetUnitsGroupBox.TabStop = false;
             this.SetUnitsGroupBox.Text = "Set Units";
             // 
-            // BMICalculatorMenuStrip
+            // MenuStrip
             // 
-            this.BMICalculatorMenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.BMICalculatorMenuStrip.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMICalculatorMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.BMICalculatorMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutToolStripMenuItem});
-            this.BMICalculatorMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.BMICalculatorMenuStrip.Name = "BMICalculatorMenuStrip";
-            this.BMICalculatorMenuStrip.Size = new System.Drawing.Size(302, 28);
-            this.BMICalculatorMenuStrip.TabIndex = 6;
-            this.BMICalculatorMenuStrip.Text = "BMICalculatorMenuStrip";
+            this.MenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MenuStrip.Size = new System.Drawing.Size(302, 27);
+            this.MenuStrip.TabIndex = 6;
+            this.MenuStrip.Text = "menuStrip1";
             // 
-            // AboutToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            this.AboutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.AboutToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.AboutToolStripMenuItem.Text = "&About";
-            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewBMIScaleMenuStripItem});
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(105)))), ((int)(((byte)(147)))));
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // ViewBMIScaleMenuStripItem
+            // 
+            this.ViewBMIScaleMenuStripItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.ViewBMIScaleMenuStripItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(105)))), ((int)(((byte)(147)))));
+            this.ViewBMIScaleMenuStripItem.Name = "ViewBMIScaleMenuStripItem";
+            this.ViewBMIScaleMenuStripItem.Size = new System.Drawing.Size(224, 26);
+            this.ViewBMIScaleMenuStripItem.Text = "&View BMI Scale";
+            this.ViewBMIScaleMenuStripItem.Click += new System.EventHandler(this.ContentsToolStripMenuItem_Click);
             // 
             // BMICalculator
             // 
@@ -333,11 +344,10 @@
             this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.CalculateBMIButton);
             this.Controls.Add(this.UserInputLayoutPanel);
-            this.Controls.Add(this.BMICalculatorMenuStrip);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.MenuStrip);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.BMICalculatorMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(7);
             this.MaximizeBox = false;
             this.Name = "BMICalculator";
@@ -354,8 +364,8 @@
             this.ResultsLayoutPanel_sub.ResumeLayout(false);
             this.ResultsLayoutPanel_sub.PerformLayout();
             this.SetUnitsGroupBox.ResumeLayout(false);
-            this.BMICalculatorMenuStrip.ResumeLayout(false);
-            this.BMICalculatorMenuStrip.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,8 +390,9 @@
         private System.Windows.Forms.TextBox BMIResultTextBox;
         private System.Windows.Forms.TextBox BMIResultMultiLineTextBox;
         private System.Windows.Forms.GroupBox SetUnitsGroupBox;
-        private System.Windows.Forms.MenuStrip BMICalculatorMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ViewBMIScaleMenuStripItem;
     }
 }
 

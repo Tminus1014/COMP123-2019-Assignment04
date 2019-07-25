@@ -46,7 +46,7 @@
             this.SplashScreenDescriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.SplashScreenDescriptionLabel.Location = new System.Drawing.Point(20, 111);
             this.SplashScreenDescriptionLabel.Name = "SplashScreenDescriptionLabel";
-            this.SplashScreenDescriptionLabel.Size = new System.Drawing.Size(528, 86);
+            this.SplashScreenDescriptionLabel.Size = new System.Drawing.Size(509, 84);
             this.SplashScreenDescriptionLabel.TabIndex = 3;
             this.SplashScreenDescriptionLabel.Text = "© 2019 - Trent B Minia - COMP123\r\nDesigned for Assignment 4.";
             // 
@@ -64,7 +64,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.SplashScreenDescriptionLabel);
             this.Controls.Add(this.SplashScreenTitleLabel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7);
             this.MaximizeBox = false;

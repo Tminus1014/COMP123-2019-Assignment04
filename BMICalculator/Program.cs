@@ -8,7 +8,7 @@ namespace BMICalculator {
     static class Program {
         public static BMICalculator bmiCalculator;
         public static SplashScreen splashScreen;
-        public static AboutForm aboutForm;
+        public static BMIScale bmiScaleForm;
 
         /// <summary>
         /// The main entry point for the application.
@@ -19,7 +19,7 @@ namespace BMICalculator {
             Application.SetCompatibleTextRenderingDefault(false);
 
             bmiCalculator = new BMICalculator();
-            aboutForm = new AboutForm();
+            bmiScaleForm = new BMIScale();
             splashScreen = new SplashScreen();
 
             Application.Run(splashScreen);
