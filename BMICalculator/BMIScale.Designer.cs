@@ -45,7 +45,7 @@
             this.CloseBMIScaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CloseBMIScaleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseBMIScaleButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(22)))));
-            this.CloseBMIScaleButton.Location = new System.Drawing.Point(149, 318);
+            this.CloseBMIScaleButton.Location = new System.Drawing.Point(151, 383);
             this.CloseBMIScaleButton.Name = "CloseBMIScaleButton";
             this.CloseBMIScaleButton.Size = new System.Drawing.Size(139, 38);
             this.CloseBMIScaleButton.TabIndex = 4;
@@ -59,7 +59,7 @@
             this.BMIScaleLabel.ForeColor = System.Drawing.Color.White;
             this.BMIScaleLabel.Location = new System.Drawing.Point(16, 55);
             this.BMIScaleLabel.Name = "BMIScaleLabel";
-            this.BMIScaleLabel.Size = new System.Drawing.Size(272, 258);
+            this.BMIScaleLabel.Size = new System.Drawing.Size(272, 325);
             this.BMIScaleLabel.TabIndex = 5;
             this.BMIScaleLabel.Text = resources.GetString("BMIScaleLabel.Text");
             this.BMIScaleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -69,7 +69,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 42F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(300, 368);
+            this.ClientSize = new System.Drawing.Size(302, 433);
             this.ControlBox = false;
             this.Controls.Add(this.BMIScaleLabel);
             this.Controls.Add(this.CloseBMIScaleButton);
