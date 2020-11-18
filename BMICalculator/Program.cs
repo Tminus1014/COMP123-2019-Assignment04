@@ -68,6 +68,8 @@ namespace BMICalculator {
 
             // Run the application; start at splash screen
             Application.Run(splashScreen);
+
+            // This is new code.
         }
     }
 }
