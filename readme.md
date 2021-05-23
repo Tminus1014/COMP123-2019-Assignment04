@@ -96,7 +96,7 @@ his/her BMI:
     type selected with the RadioButton Control
     9. A Multiline TextBox Control that displays the user’s BMI results as per 
     the BMI Scale above
-3. Solution Structure (3 Marks: Program Structure):
+3. Solution Structure:
     1. Your solutions should include a Windows Form named BMICalculator.cs
     2. The Windows Form and all attached UI Controls must have appropriate 
     Variable names with the following format: ControlNameUIControlType 
@@ -104,7 +104,7 @@ his/her BMI:
     3. Ensure all private class member variables (instance variables) use an 
     underscore character (_) at the beginning of the identifier name to signify 
     that they are private (or protected)
-4. Internal Documentation (6 Marks: Internal Documentation):
+4. Internal Documentation:
     1. Ensure you include a program header that indicates: The Author's name, 
     Author’s student number, Date last Modified, Program description, Revision 
     History for each project in your 
